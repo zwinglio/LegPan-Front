@@ -1,8 +1,6 @@
 <template>
     <h1>
-
-
- {{ nome }}
+        {{ nome }}
     </h1>
 </template>
 
@@ -10,7 +8,7 @@
 export default {
     data() {
         return {
-            "nome" : this.$route.param.about,
+            "nome": this.$route.param.about,
         }
     }
 }
