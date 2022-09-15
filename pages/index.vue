@@ -1,15 +1,16 @@
 <template>
-  <div class="">
-    <h1>Olá</h1>
-    <NuxtLink to="about">Sobre</NuxtLink>
-    <HeadingLogout />
+  <div class="app">
+    <InicioHeader />
+    <section id="content">
+      <b-row>
+        <b-col>
+          <h2>Conteudo</h2>
+        </b-col>
+      </b-row>
+    </section>
   </div>
 </template>
 
 <script>
-import HeadingLogout from '../components/HeadingLogout.vue';
-export default {
-    name: "IndexPage",
-    components: { HeadingLogout }
-}
+export default {};
 </script>
