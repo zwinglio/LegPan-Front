@@ -9,7 +9,7 @@
         </b-row>
       </b-container>
     </section>
-    <section id="conteudo" class="py-4">
+    <section id="login-form" class="py-4">
       <b-container>
         <b-row align-v="center" align-h="center" style="height: 50vh">
           <b-col lg="8">
@@ -24,7 +24,7 @@
                     src="~/assets/img/logo_color.svg"
                     alt="Image"
                     class="rounded-0 w-75"
-                    style="padding: 150px 0"
+                    style="padding: 15vh 0"
                   ></b-card-img>
                 </b-col>
                 <b-col md="8">
@@ -56,9 +56,9 @@
                             placeholder="Digite sua senha"
                           ></b-form-input>
                         </b-form-group>
-                        <b-button type="submit" variant="warning"
-                          >Entrar</b-button
-                        >
+                        <NuxtLink to="/dashboard" class="btn btn-primary">
+                          Entrar
+                        </NuxtLink>
                       </form>
                     </b-card-text>
                   </b-card-body>
