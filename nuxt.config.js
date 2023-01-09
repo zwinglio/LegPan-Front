@@ -23,7 +23,11 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ["@nuxtjs/style-resources"],
+  buildModules: [
+    "@nuxtjs/style-resources",
+    '@nuxtjs/composition-api/module',
+    ['@pinia/nuxt', { disableVuex: true }]
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -32,6 +36,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
     "bootstrap-vue/nuxt",
+    "@pinia/nuxt",
   ],
 
   bootstrapVue: {
