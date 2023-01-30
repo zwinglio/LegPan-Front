@@ -35,14 +35,14 @@ export default {
                   Identidade Organizacional
                 </b-nav-item>
                 <b-nav-item
-                  href="/dashboard/mapa"
+                  to="/dashboard/mapa"
                   :active="$route.name === 'dashboard-mapa'"
                   right
                 >
                   Mapa Estratégico
                 </b-nav-item>
                 <b-nav-item
-                  href="/dashboard/gerenciar"
+                  to="/dashboard/gerenciar"
                   :active="$route.name === 'dashboard-gerenciar'"
                   right
                 >
