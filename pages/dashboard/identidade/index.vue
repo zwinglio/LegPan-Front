@@ -22,7 +22,7 @@ export default {
   <div class="page">
     <PartialsPageTitle
       title="Identidade Organizacional"
-      link="/identidade/editar"
+      link="./identidade/editar"
     />
     <section id="identidade">
       <b-container v-if="!organization.fetched">
