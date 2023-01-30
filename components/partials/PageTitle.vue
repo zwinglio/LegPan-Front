@@ -35,8 +35,16 @@ export default {
   border-bottom: #ffb703 5px solid;
 }
 
-#page-title button {
+#page-title .btn {
   width: 100%;
+  padding: 10px 50px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.32px;
+  color: #fff8e6;
 }
 
 #page-title h1 {

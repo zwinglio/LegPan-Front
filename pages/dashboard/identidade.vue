@@ -36,9 +36,10 @@ export default {
         </b-alert>
       </b-container>
       <b-container v-else>
-        <b-row>
-          <b-col col lg="4">
-            <h2>Foto</h2>
+        <b-row class="mb-4" align-v="center">
+          <b-col col lg="3" class="text-center">
+            <b-img center src="https://placehold.co/200x180" rounded alt="" />
+            <!-- <b-button variant="secondary" class="mt-3">📷 Mudar foto</b-button> -->
           </b-col>
           <b-col>
             <h2>{{ organization.name }}</h2>
