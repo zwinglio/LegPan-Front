@@ -9,6 +9,16 @@ export default {
       type: String,
       required: true,
     },
+    action: {
+      type: String,
+      required: true,
+      default: "Editar",
+    },
+    back: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
 };
 </script>
@@ -21,7 +31,8 @@ export default {
           <h1>{{ title }}</h1>
         </b-col>
         <b-col col lg="2">
-          <b-button variant="warning" :to="link">Editar</b-button>
+          <b-button v-if="!back" variant="warning" :to="link">{{ action }}</b-button>
+          <b-button v-if="back" variant="secondary" :to="link">{{ action}}</b-button>
         </b-col>
       </b-row>
     </b-container>
