@@ -4,7 +4,7 @@
       <b-container>
         <b-row>
           <b-col>
-            <img src="~/assets/img/logo_light.svg" alt="Logo LegPlan" />
+            <img src="~/assets/img/logo_light.svg" alt="Logo LegPlan">
           </b-col>
         </b-row>
       </b-container>
@@ -25,7 +25,7 @@
                     alt="Image"
                     class="rounded-0 w-75"
                     style="padding: 15vh 0"
-                  ></b-card-img>
+                  />
                 </b-col>
                 <b-col md="8">
                   <b-card-body title="Login">
@@ -42,7 +42,7 @@
                             type="email"
                             required
                             placeholder="Digite seu e-mail"
-                          ></b-form-input>
+                          />
                         </b-form-group>
                         <b-form-group
                           id="input-group-2"
@@ -54,7 +54,7 @@
                             type="password"
                             required
                             placeholder="Digite sua senha"
-                          ></b-form-input>
+                          />
                         </b-form-group>
                         <NuxtLink to="/dashboard" class="btn btn-primary">
                           Entrar

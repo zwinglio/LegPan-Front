@@ -3,7 +3,7 @@
     <b-container>
       <b-row>
         <b-col lg="3">
-          <img src="~/assets/img/logo_color.svg" alt="Logo" />
+          <img src="~/assets/img/logo_color.svg" alt="Logo">
         </b-col>
         <b-col>
           <p class="small">

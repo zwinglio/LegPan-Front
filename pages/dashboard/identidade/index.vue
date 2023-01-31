@@ -1,21 +1,23 @@
 <script>
-import { useOrganizationStore } from "@/store/organization";
+import { useOrganizationStore } from '@/store/organization'
 
 export default {
-  layout: "dashboard",
-  setup() {
-    const organization = useOrganizationStore();
-    return { organization };
+  layout: 'dashboard',
+  setup () {
+    const organization = useOrganizationStore()
+    return { organization }
   },
-  head() {
+  head () {
     return {
-      title: "Identidade",
-    };
+      title: 'Identidade'
+    }
   },
-  mounted() {
-    if (!this.organization.fetched) this.organization.fetchOrganization();
-  },
-};
+  mounted () {
+    if (!this.organization.fetched) {
+      this.organization.fetchOrganization()
+    }
+  }
+}
 </script>
 
 <template>
@@ -32,7 +34,7 @@ export default {
             class="spinner-border spinner-border-sm"
             role="status"
             aria-hidden="true"
-          ></span>
+          />
         </b-alert>
       </b-container>
       <b-container v-else>
@@ -45,8 +47,8 @@ export default {
             <p>Vigência do planejamento</p>
             <b-card>
               <b-card-text>
-                Ano de início: 2022<br />
-                Ano de fim: 2030
+                Ano de início: {{ organization.get_start_year }}<br>
+                Ano de fim: {{ organization.get_end_year }}
               </b-card-text>
             </b-card>
           </b-col>

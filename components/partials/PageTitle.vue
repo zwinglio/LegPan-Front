@@ -3,24 +3,24 @@ export default {
   props: {
     title: {
       type: String,
-      required: true,
+      required: true
     },
     link: {
       type: String,
-      required: true,
+      required: true
     },
     action: {
       type: String,
       required: false,
-      default: "Editar",
+      default: 'Editar'
     },
     back: {
       type: Boolean,
       required: false,
-      default: false,
-    },
-  },
-};
+      default: false
+    }
+  }
+}
 </script>
 
 <template>
@@ -31,8 +31,12 @@ export default {
           <h1>{{ title }}</h1>
         </b-col>
         <b-col col lg="2">
-          <b-button v-if="!back" variant="warning" :to="link">{{ action }}</b-button>
-          <b-button v-if="back" variant="secondary" :to="link">{{ action}}</b-button>
+          <b-button v-if="!back" variant="warning" :to="link">
+            {{ action }}
+          </b-button>
+          <b-button v-if="back" variant="secondary" :to="link">
+            {{ action }}
+          </b-button>
         </b-col>
       </b-row>
     </b-container>

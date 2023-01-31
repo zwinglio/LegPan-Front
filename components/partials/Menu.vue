@@ -1,9 +1,9 @@
 <script>
 export default {
-  data() {
-    return {};
-  },
-};
+  data () {
+    return {}
+  }
+}
 </script>
 
 <template>
@@ -13,10 +13,10 @@ export default {
         <b-col>
           <b-navbar active-class="active">
             <b-navbar-brand>
-              <img src="~/assets/img/logo_light.svg" alt="Logo LegPlan" />
+              <img src="~/assets/img/logo_light.svg" alt="Logo LegPlan">
             </b-navbar-brand>
 
-            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+            <b-navbar-toggle target="nav-collapse" />
 
             <b-collapse id="nav-collapse" is-nav>
               <b-navbar-nav class="ml-auto">
@@ -25,8 +25,9 @@ export default {
                   :class="{ active: $route.name === 'dashboard' }"
                   :active="$route.name === 'dashboard'"
                   right
-                  >Dashboard</b-nav-item
                 >
+                  Dashboard
+                </b-nav-item>
                 <b-nav-item
                   to="/dashboard/identidade"
                   :active="$route.name === 'dashboard-identidade'"

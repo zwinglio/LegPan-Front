@@ -1,12 +1,12 @@
 <script>
 export default {
-  layout: "dashboard",
-  head() {
+  layout: 'dashboard',
+  head () {
     return {
-      title: "Gerenciar Plano",
-    };
-  },
-};
+      title: 'Gerenciar Plano'
+    }
+  }
+}
 </script>
 
 <template>

@@ -7,7 +7,6 @@
 </template>
 
 <style>
-
 .btn {
   padding: 10px 50px;
   font-family: "Inter";

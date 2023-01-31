@@ -5,7 +5,9 @@
       <b-row>
         <b-col>
           <h2>Conteudo</h2>
-          <NuxtLink to="/login">Fazer login</NuxtLink>
+          <NuxtLink to="/login">
+            Fazer login
+          </NuxtLink>
         </b-col>
       </b-row>
     </section>
@@ -13,5 +15,5 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>

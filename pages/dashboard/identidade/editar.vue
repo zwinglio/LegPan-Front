@@ -1,37 +1,39 @@
 <script>
-import { useOrganizationStore } from "@/store/organization";
+import { useOrganizationStore } from '@/store/organization'
 
 export default {
-  layout: "dashboard",
-  head() {
+  layout: 'dashboard',
+  setup () {
+    const organization = useOrganizationStore()
+    return { organization }
+  },
+  data () {
     return {
-      title: "Editar Identidade Organizacional",
-    };
+      loading: false
+    }
   },
-  setup() {
-    const organization = useOrganizationStore();
-    return { organization };
-  },
-  data() {
+  head () {
     return {
-      loading: false,
-    };
+      title: 'Editar Identidade Organizacional'
+    }
   },
-  mounted() {
-    if (!this.organization.fetched) this.organization.fetchOrganization();
-    this.organization.fetched = false;
+  mounted () {
+    if (!this.organization.fetched) {
+      this.organization.fetchOrganization()
+    }
+    this.organization.fetched = false
   },
   methods: {
-    updateOrganization() {
-      this.loading = true;
-      this.organization.updateOrganization(this.organization);
+    updateOrganization () {
+      this.loading = true
+      this.organization.updateOrganization(this.organization)
       setTimeout(() => {
-        this.loading = false;
-        this.$router.push("/dashboard/identidade");
-      }, 2000);
-    },
-  },
-};
+        this.loading = false
+        this.$router.push('/dashboard/identidade')
+      }, 2000)
+    }
+  }
+}
 </script>
 
 <template>
@@ -47,7 +49,9 @@ export default {
         <b-row>
           <b-col lg="4" class="text-center">
             <b-img center src="https://placehold.co/200x180" rounded alt="" />
-            <b-button variant="secondary" class="mt-3">📷 Mudar Foto</b-button>
+            <b-button variant="secondary" class="mt-3">
+              📷 Mudar Foto
+            </b-button>
           </b-col>
           <b-col>
             <form action="#">
@@ -82,7 +86,7 @@ export default {
                   class="spinner-border spinner-border-sm ml-2"
                   role="status"
                   aria-hidden="true"
-                ></span>
+                />
               </b-button>
             </form>
           </b-col>

@@ -1,12 +1,12 @@
 <script>
 export default {
-  layout: "dashboard",
-  head() {
+  layout: 'dashboard',
+  head () {
     return {
-      title: "Mapa Estratégico",
-    };
-  },
-};
+      title: 'Mapa Estratégico'
+    }
+  }
+}
 </script>
 
 <template>
