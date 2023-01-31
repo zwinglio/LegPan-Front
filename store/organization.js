@@ -6,9 +6,12 @@ export const useOrganizationStore = defineStore("organization", {
     mission: "To make the world a better place",
     vision: "To be the best organization in the world",
     values: ["Integrity", "Excellence", "Teamwork", "Innovation", "Passion"],
+    start_date: "2021-01-01",
+    end_date: "2021-12-31",
     fetched: false, 
   }),
   actions: {
+
     async fetchOrganization() {
       console.log("Fetching organization")
 
@@ -19,6 +22,8 @@ export const useOrganizationStore = defineStore("organization", {
             this.mission = company.mission;
             this.vision = company.vision;
             this.values = company.values;
+            this.start_date = company.plan_start_date;
+            this.end_date = company.plan_end_date;
 
             setTimeout(() => {
                 this.fetched = true;
@@ -30,5 +35,26 @@ export const useOrganizationStore = defineStore("organization", {
           console.log(error);
         });
     },
+
+    async updateOrganization() {
+      console.log("Updating organization")
+
+      const response = await this.$nuxt.$axios
+        .$put("/api/company", {
+          name: this.name,
+          mission: this.mission,
+          vision: this.vision,
+          values: this.values,
+          plan_start_date: this.start_date,
+          plan_end_date: this.end_date,
+        })
+        .then(({ company }) => {
+            console.log("organization updated");
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
   },
 });

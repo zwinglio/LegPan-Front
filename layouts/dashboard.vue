@@ -5,3 +5,16 @@
     <PartialsFooter />
   </div>
 </template>
+
+<style>
+
+.btn {
+  padding: 10px 50px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.32px;
+}
+</style>
