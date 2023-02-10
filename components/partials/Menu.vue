@@ -11,12 +11,10 @@ export default {
     <b-container>
       <b-row>
         <b-col>
-          <b-navbar active-class="active">
+          <b-navbar toggleable="lg" active-class="active">
             <b-navbar-brand>
               <img src="~/assets/img/logo_light.svg" alt="Logo LegPlan">
             </b-navbar-brand>
-
-            <b-navbar-toggle target="nav-collapse" />
 
             <b-collapse id="nav-collapse" is-nav>
               <b-navbar-nav class="ml-auto">
@@ -51,6 +49,7 @@ export default {
                 </b-nav-item>
               </b-navbar-nav>
             </b-collapse>
+            <b-navbar-toggle target="nav-collapse" />
           </b-navbar>
         </b-col>
       </b-row>
@@ -65,5 +64,9 @@ export default {
 .active {
   color: var(--yellow) !important;
   font-weight: bold;
+}
+
+button {
+  color: #fff !important;
 }
 </style>

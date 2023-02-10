@@ -7,6 +7,11 @@
 </template>
 
 <style>
+/* activate font ligatures */
+:root{
+  font-variant-ligatures: contextual;
+}
+
 .btn {
   padding: 10px 50px;
   font-family: "Inter";
