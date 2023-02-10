@@ -7,7 +7,7 @@ export default {
     },
     link: {
       type: String,
-      required: true
+      default: ''
     },
     action: {
       type: String,
@@ -30,7 +30,7 @@ export default {
         <b-col>
           <h1>{{ title }}</h1>
         </b-col>
-        <b-col col lg="2">
+        <b-col v-if="link" col lg="2">
           <b-button v-if="!back" variant="warning" :to="link">
             {{ action }}
           </b-button>
