@@ -1,11 +1,11 @@
 <script>
-import { useOrganizationStore } from '@/store/organization'
+import useOrganizationStore from '@/store/organization'
 
 export default {
   layout: 'dashboard',
   setup () {
-    const organization = useOrganizationStore()
-    return { organization }
+    const { organization, fetchOrganization } = useOrganizationStore()
+    return { organization, fetchOrganization }
   },
   data () {
     return {
@@ -19,7 +19,7 @@ export default {
   },
   mounted () {
     if (!this.organization.fetched) {
-      this.organization.fetchOrganization()
+      this.fetchOrganization()
     }
     this.organization.fetched = false
   },

@@ -1,23 +1,27 @@
 import { defineStore } from 'pinia'
 
-export const useOrganizationStore = defineStore('organization', {
+export default defineStore('organization', {
   state: () => ({
-    name: 'LegPlan',
-    mission: 'To make the world a better place',
-    vision: 'To be the best organization in the world',
-    values: ['Integrity', 'Excellence', 'Teamwork', 'Innovation', 'Passion'],
-    start_date: '2021-01-01',
-    end_date: '2021-31-01',
-    fetched: false
+    organization: {
+      name: 'LegPlan',
+      mission: 'To make the world a better place',
+      vision: 'To be the best organization in the world',
+      values: ['Integrity', 'Excellence', 'Teamwork', 'Innovation', 'Passion'],
+      start_date: '2021-01-01',
+      end_date: '2021-31-01',
+      fetched: false
+    }
   }),
+
   getters: {
-    get_end_year () {
-      return this.end_date.split('-')[0]
+    getEndYear (state) {
+      return state.organization.end_date.split('-')[0]
     },
-    get_start_year () {
-      return this.start_date.split('-')[0]
+    getStartYear (state) {
+      return state.organization.start_date.split('-')[0]
     }
   },
+
   actions: {
     async fetchOrganization () {
       console.log('Fetching organization')
@@ -25,15 +29,15 @@ export const useOrganizationStore = defineStore('organization', {
       await this.$nuxt.$axios
         .$get('/api/company')
         .then(({ company }) => {
-          this.name = company.name
-          this.mission = company.mission
-          this.vision = company.vision
-          this.values = company.values
-          this.start_date = company.plan_start_date
-          this.end_date = company.plan_end_date
+          this.organization.name = company.name
+          this.organization.mission = company.mission
+          this.organization.vision = company.vision
+          this.organization.values = company.values
+          this.organization.start_date = company.plan_start_date
+          this.organization.end_date = company.plan_end_date
 
           setTimeout(() => {
-            this.fetched = true
+            this.organization.fetched = true
           }, 1000)
 
           console.log('organization fetched')

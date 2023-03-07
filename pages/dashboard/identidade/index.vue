@@ -1,25 +1,3 @@
-<script>
-import { useOrganizationStore } from '@/store/organization'
-
-export default {
-  layout: 'dashboard',
-  setup () {
-    const organization = useOrganizationStore()
-    return { organization }
-  },
-  head () {
-    return {
-      title: 'Identidade'
-    }
-  },
-  mounted () {
-    if (!this.organization.fetched) {
-      this.organization.fetchOrganization()
-    }
-  }
-}
-</script>
-
 <template>
   <div class="page">
     <PartialsPageTitle
@@ -30,6 +8,7 @@ export default {
       <b-container v-if="!organization.fetched">
         <b-alert show variant="warning">
           Carregando dados...
+          </button>
           <span
             class="spinner-border spinner-border-sm"
             role="status"
@@ -47,8 +26,8 @@ export default {
             <p>Vigência do planejamento</p>
             <b-card>
               <b-card-text>
-                Ano de início: {{ organization.get_start_year }}<br>
-                Ano de fim: {{ organization.get_end_year }}
+                Ano de início: {{ getStartYear }}<br>
+                Ano de fim: {{ getEndYear }}
               </b-card-text>
             </b-card>
           </b-col>
@@ -83,6 +62,34 @@ export default {
     </section>
   </div>
 </template>
+
+<script>
+import useOrganizationStore from '@/store/organization'
+
+export default {
+  layout: 'dashboard',
+  setup () {
+    const { organization, fetchOrganization, getStartYear, getEndYear } = useOrganizationStore()
+
+    return {
+      organization,
+      fetchOrganization,
+      getStartYear,
+      getEndYear
+    }
+  },
+  head () {
+    return {
+      title: 'Identidade'
+    }
+  },
+  mounted () {
+    if (!this.organization.fetched) {
+      this.fetchOrganization()
+    }
+  }
+}
+</script>
 
 <style>
 #identidade {
